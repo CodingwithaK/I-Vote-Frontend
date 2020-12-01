@@ -1,30 +1,46 @@
 import React from "react"
-
+const url = "http://localhost:3000/api/"
 class ClimateQuestion extends React.Component {
     state = {
       importance: 0,
-      reform: 0
-
+      stance_id: 0,
+      issue_id:6,
     }
-  
+ 
+
     handleImportanceChange = (event) => {
       this.setState({importance: event.target.value})
     }
     handleReformChange = (event) => {
-        this.setState({reform: event.target.value})
+        this.setState({stance_id: event.target.value})
     }
-    handleSubmit = () => {
+    handleFormSubmit = (event) => {
+      event.preventDefault()
+      
+      fetch(url+"stances", {
+        method: "POST",
+        headers: {
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+          issue_id: parseInt(this.state.issue_id),
+          stance_id: parseInt(this.state.stance_id),
+          importance: parseInt(this.state.importance),
+          user_id: 1
+        })
+      })
       
     }
+
     render() {
-      let {importance} = this.state.importance
-      let {reform} = this.state.reform
+      
       return(
       <div>
-      <form className="Climate Change" >
+      <form className="Climate Change"  onSubmit={this.handleFormSubmit} >
        <p>
          What kind of reform would you like to see on climate change?
        </p>
+       
        <div onChange={event => this.handleReformChange(event)}>
         <input type="radio" value="0" name="Climate Change" issue_id="1" /> Conservative Reform
         <input type="radio" value="1" name="Climate Change" issue_id="1" /> Neutral Reform
@@ -38,7 +54,6 @@ class ClimateQuestion extends React.Component {
         <input type="radio" value="3" name="Climate Importance" issue_id="1" /> Very Important
         <input type="radio" value="4" name="Climate Importance" issue_id="1" /> Mandatory 
         </div>
-        <div></div>
         <button type="submit">submit</button>
       </form>
       </div>
