@@ -1,10 +1,12 @@
+
+
 import React from "react"
 const url = "http://localhost:3000/api/"
-class ClimateQuestion extends React.Component {
+class GunQuestion extends React.Component {
     state = {
       importance: 0,
       stance_id: 0,
-      issue_id:1,
+      issue_id:7,
     }
  
 
@@ -36,23 +38,23 @@ class ClimateQuestion extends React.Component {
       
       return(
       <div>
-      <form className="Climate Change"  onSubmit={this.handleFormSubmit} >
+      <form className="Gun"  onSubmit={this.handleFormSubmit} >
        <p>
-       Should the government increase environmental regulations to prevent climate change?
+     Should there be more restrictions on the current process of purchasing a gun?
        </p>
        
        <div onChange={event => this.handleReformChange(event)}>
-        <input type="radio" value="0" name="Climate Change" issue_id="1" /> No, the government should deregulate
-        <input type="radio" value="1" name="Climate Change" issue_id="1" />  Other Stance
-        <input type="radio" value="2"name="Climate Change" issue_id="1" /> Yes
+        <input type="radio" value="0" name="Gun" issue_id="7" /> No
+        <input type="radio" value="1" name="Gun" issue_id="7" />  Other stance 
+        <input type="radio" value="2"name="Gun" issue_id="7" /> Yes
         </div>
         <p>How important is it to you, for your ideal candidate to share the same view as you?</p>
         <div onChange={event => this.handleImportanceChange(event)}>
-        <input type="radio" value="0" name="Climate Importance" issue_id="1" /> Not Important 
-        <input type="radio" value="1" name="Climate Importance" issue_id="1" /> A Little Important
-        <input type="radio" value="2" name="Climate Importance" issue_id="1" /> Somewhat Important 
-        <input type="radio" value="3" name="Climate Importance" issue_id="1" /> Very Important
-        <input type="radio" value="4" name="Climate Importance" issue_id="1" /> Mandatory 
+        <input type="radio" value="0" name="Gun Importance" issue_id="7" /> Not Important 
+        <input type="radio" value="1" name="Gun Importance" issue_id="7" /> A Little Important
+        <input type="radio" value="2" name="Gun Importance" issue_id="7" /> Somewhat Important 
+        <input type="radio" value="3" name="Gun Importance" issue_id="7" /> Very Important
+        <input type="radio" value="4" name="Gun Importance" issue_id="7" /> Mandatory 
         </div>
         <button type="submit">submit</button>
       </form>
@@ -60,4 +62,4 @@ class ClimateQuestion extends React.Component {
       )
     }
   }
-  export default ClimateQuestion 
+  export default GunQuestion
