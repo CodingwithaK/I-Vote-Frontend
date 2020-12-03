@@ -38,11 +38,11 @@ class HealthcareQuestion extends React.Component {
       <div>
       <form className="Healthcare"  onSubmit={this.handleFormSubmit} >
        <p>
-       Should the federal government increase funding of health care for low income individuals (Medicaid)?
+       Should the federal government increase funding of health care for low income individuals ?
        </p>
        
        <div onChange={event => this.handleReformChange(event)}>
-        <input type="radio" value="0" name="Healthcare" issue_id="2" /> No, the government should decrease funding
+        <input type="radio" value="0" name="Healthcare" issue_id="2" /> No
         <input type="radio" value="1" name="Healthcare" issue_id="2" /> Other Stance
         <input type="radio" value="2"name="Healthcare" issue_id="2" /> Yes
         </div>

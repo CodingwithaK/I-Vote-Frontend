@@ -38,7 +38,7 @@ class EducationQuestion extends React.Component {
       <div>
       <form className="Education"  onSubmit={this.handleFormSubmit} >
        <p>
-       Should the federal government pay for tuition at four-year colleges and universities?
+       Should the federal government pay for tuition at colleges and universities?
        </p>
        
        <div onChange={event => this.handleReformChange(event)}>

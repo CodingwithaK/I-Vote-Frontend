@@ -39,7 +39,7 @@ class ReligionQuestion extends React.Component {
       <div>
       <form className="Religion"  onSubmit={this.handleFormSubmit} >
        <p>
-       Should a business be able to deny service to a customer if the request conflicts with the owner’s religioReligion
+       Should a business be able to deny service to a customer if the request conflicts with the owner’s religion?
        </p>
        
        <div onChange={event => this.handleReformChange(event)}>

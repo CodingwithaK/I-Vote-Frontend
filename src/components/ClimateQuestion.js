@@ -42,7 +42,7 @@ class ClimateQuestion extends React.Component {
        </p>
        
        <div onChange={event => this.handleReformChange(event)}>
-        <input type="radio" value="0" name="Climate Change" issue_id="1" /> No, the government should deregulate
+        <input type="radio" value="0" name="Climate Change" issue_id="1" /> No
         <input type="radio" value="1" name="Climate Change" issue_id="1" />  Other Stance
         <input type="radio" value="2"name="Climate Change" issue_id="1" /> Yes
         </div>

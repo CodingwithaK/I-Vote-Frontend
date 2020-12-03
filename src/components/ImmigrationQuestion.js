@@ -56,6 +56,7 @@ class ImmigrationQuestion extends React.Component {
         </div>
         <button type="submit">submit</button>
       </form>
+      
       </div>
       )
     }
