@@ -5,6 +5,7 @@ class ClimateQuestion extends React.Component {
       importance: 0,
       stance_id: 0,
       issue_id:1,
+      submitted: false
     }
  
 
@@ -29,33 +30,37 @@ class ClimateQuestion extends React.Component {
           user_id: 1
         })
       })
-      
+      this.setState({submitted:true})
     }
 
     render() {
+      let returnValue
+      if(this.state.submitted === false)
+      returnValue = <form className="Climate Change"  onSubmit={this.handleFormSubmit} >
+      <p>
+      Should the government increase environmental regulations to prevent climate change?
+      </p>
       
+      <div onChange={event => this.handleReformChange(event)}>
+       <input type="radio" value="0" name="Climate Change" issue_id="1" /> No
+       <input type="radio" value="1" name="Climate Change" issue_id="1" />  Other Stance
+       <input type="radio" value="2"name="Climate Change" issue_id="1" /> Yes
+       </div>
+       <p>How important is it to you, for your ideal candidate to share the same view as you?</p>
+       <div onChange={event => this.handleImportanceChange(event)}>
+       <input type="radio" value="0" name="Climate Importance" issue_id="1" /> Not Important 
+       <input type="radio" value="1" name="Climate Importance" issue_id="1" /> A Little Important
+       <input type="radio" value="2" name="Climate Importance" issue_id="1" /> Somewhat Important 
+       <input type="radio" value="3" name="Climate Importance" issue_id="1" /> Very Important
+       <input type="radio" value="4" name="Climate Importance" issue_id="1" /> Mandatory 
+       </div>
+       <button type="submit">submit</button>
+     </form>
+     else
+      returnValue = <div/>
       return(
       <div>
-      <form className="Climate Change"  onSubmit={this.handleFormSubmit} >
-       <p>
-       Should the government increase environmental regulations to prevent climate change?
-       </p>
-       
-       <div onChange={event => this.handleReformChange(event)}>
-        <input type="radio" value="0" name="Climate Change" issue_id="1" /> No
-        <input type="radio" value="1" name="Climate Change" issue_id="1" />  Other Stance
-        <input type="radio" value="2"name="Climate Change" issue_id="1" /> Yes
-        </div>
-        <p>How important is it to you, for your ideal candidate to share the same view as you?</p>
-        <div onChange={event => this.handleImportanceChange(event)}>
-        <input type="radio" value="0" name="Climate Importance" issue_id="1" /> Not Important 
-        <input type="radio" value="1" name="Climate Importance" issue_id="1" /> A Little Important
-        <input type="radio" value="2" name="Climate Importance" issue_id="1" /> Somewhat Important 
-        <input type="radio" value="3" name="Climate Importance" issue_id="1" /> Very Important
-        <input type="radio" value="4" name="Climate Importance" issue_id="1" /> Mandatory 
-        </div>
-        <button type="submit">submit</button>
-      </form>
+      {returnValue}
       </div>
       )
     }

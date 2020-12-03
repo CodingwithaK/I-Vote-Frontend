@@ -2,14 +2,13 @@ import React from 'react'
 import { Container } from 'semantic-ui-react'
 import CandidateContainer from './CandidateContainer'
 import ClimateQuestion from './ClimateQuestion'
-import AbortionQuestion from './AbortionQuestion'
 import HealthcareQuestion from './HealthcareQuestion'
 import GunQuestion from './GunQuestion'
 import ReligionQuestion from './ReligionQuestion'
 import ImmigrationQuestion from './ImmigrationQuestion'
 import EducationQuestion from './EducationQuestion'
 import AbortionQuestion from './AbortionQuestion'
-import ClimateQuestion from './ClimateQuestion'
+
 const URL = "http://localhost:3000/api/candidate"
 
 class Homepage extends React.Component {

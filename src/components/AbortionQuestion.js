@@ -5,6 +5,7 @@ class AbortionQuestion extends React.Component {
       importance: 0,
       stance_id: 0,
       issue_id:3,
+      submitted:false
     }
  
 
@@ -29,19 +30,18 @@ class AbortionQuestion extends React.Component {
           user_id: 1
         })
       })
-      
+      this.setState({submitted: true})
     }
 
     render() {
-      
-      return(
-      <div>
-      <form className="Abortion"  onSubmit={this.handleFormSubmit} >
-       <p>
-           What is your stance on abortion?
-       </p>
-       
-       <div onChange={event => this.handleReformChange(event)}>
+      let returnValue
+      if(this.state.submitted === false)
+        returnValue =  <form className="Abortion"  onSubmit={this.handleFormSubmit} >
+        <p>
+            What is your stance on abortion?
+        </p>
+        
+        <div onChange={event => this.handleReformChange(event)}>
         <input type="radio" value="0" name="Abortion" issue_id="3" /> Pro-Life
         <input type="radio" value="1" name="Abortion" issue_id="3" />  Other Stance
         <input type="radio" value="2"name="Abortion" issue_id="3" /> Pro-Choice
@@ -56,6 +56,12 @@ class AbortionQuestion extends React.Component {
         </div>
         <button type="submit">submit</button>
       </form>
+      else
+        returnValue = <div/>
+      
+      return(
+      <div>
+     {returnValue}
       </div>
       )
     }
