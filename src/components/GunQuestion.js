@@ -1,13 +1,14 @@
 
 
 import React from "react"
+import CandidateContainer from './CandidateContainer'
 const url = "http://localhost:3000/api/"
 class GunQuestion extends React.Component {
     state = {
       importance: 0,
       stance_id: 0,
       issue_id:7,
-      submitted: false
+      submitted: false,
     }
  
 
@@ -61,11 +62,9 @@ class GunQuestion extends React.Component {
          <button type="submit">submit</button>
        </form>
        else 
-        returnValue =  <div></div> 
-        // <CandidateContainer
-            
-        // candidates={this.props.candidates}
-        // />
+        returnValue =  
+        <CandidateContainer
+        />
       return(
       <div>
        {returnValue}

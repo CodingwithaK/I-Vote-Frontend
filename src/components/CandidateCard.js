@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card } from 'semantic-ui-react'
 class CandidateCard extends React.Component {
+
 state={isFront:true}
 
   handleOnClick= () => {
@@ -10,10 +11,13 @@ state={isFront:true}
     })
   }
   render() {
-    const{name,image}= this.props.candidate
-    const{percentage}= this.props.candidatePercentage
-    if (this.state.isFront == true)
-        cardInfo = <img src = {image}/>
+    const{ballot_name,img}= this.props.candidate
+
+    const{percentage}= this.props.candidate.candidate_users
+    
+    let cardInfo
+    if (this.state.isFront === true)
+        cardInfo = <img src = {img} alt="oh no!"/>
     else 
         cardInfo =  <p> 
                         {percentage} match 
@@ -25,7 +29,7 @@ state={isFront:true}
             {cardInfo}
           </div>
           <div className="content">
-            <div className="header">{name}</div>
+            <div className="header">{ballot_name}</div>
           </div>
           
         </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container } from 'semantic-ui-react'
-import CandidateContainer from './CandidateContainer'
+
 import ClimateQuestion from './ClimateQuestion'
 import HealthcareQuestion from './HealthcareQuestion'
 import GunQuestion from './GunQuestion'
@@ -9,22 +9,12 @@ import ImmigrationQuestion from './ImmigrationQuestion'
 import EducationQuestion from './EducationQuestion'
 import AbortionQuestion from './AbortionQuestion'
 
-const URL = "http://localhost:3000/api/candidate"
+
 
 class Homepage extends React.Component {
 
-    state = {
-        candidates:[],
-
-    }
-    componentDidMount(){
-        fetch(URL)
-          .then(res=>res.json())
-          .then(candidates => this.setState({
-            
-            candidates:candidates
-          }))
-      }
+    
+    
 
       render() {
 
@@ -38,7 +28,7 @@ class Homepage extends React.Component {
             <EducationQuestion/>
             <ImmigrationQuestion/>
            <ReligionQuestion/>
-           <GunQuestion candidates={this.state.candidates}/>
+           <GunQuestion />
           </Container>
         )
       }
