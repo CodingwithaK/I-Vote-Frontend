@@ -2,7 +2,8 @@ import React from 'react'
 import { Card } from 'semantic-ui-react'
 class CandidateCard extends React.Component {
 
-state={isFront:true}
+  state={isFront:true}
+  
 
   handleOnClick= () => {
     
@@ -12,15 +13,15 @@ state={isFront:true}
   }
   render() {
     const{ballot_name,img}= this.props.candidate
-
-    const{percentage}= this.props.candidate.candidate_users
+   
+    const{percentage}= this.props.candidate.candidate_users[0]
     
     let cardInfo
     if (this.state.isFront === true)
         cardInfo = <img src = {img} alt="oh no!"/>
     else 
         cardInfo =  <p> 
-                        {percentage} match 
+                        {percentage}% match 
                     </p>
     return (
       <Card onClick={this.handleOnClick}>

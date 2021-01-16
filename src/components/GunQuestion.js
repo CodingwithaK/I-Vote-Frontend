@@ -1,7 +1,8 @@
 
 
 import React from "react"
-import CandidateContainer from './CandidateContainer'
+
+import Loading from './Loading'
 const url = "http://localhost:3000/api/"
 class GunQuestion extends React.Component {
     state = {
@@ -9,18 +10,12 @@ class GunQuestion extends React.Component {
       stance_id: 0,
       issue_id:7,
       submitted: false,
+      loading:false,
+      
+   
     }
  
-
-    handleImportanceChange = (event) => {
-      this.setState({importance: event.target.value})
-    }
-    handleReformChange = (event) => {
-        this.setState({stance_id: event.target.value})
-    }
-    handleFormSubmit = (event) => {
-      event.preventDefault()
-      
+    postRequest = (event) => {
       fetch(url+"stances", {
         method: "POST",
         headers: {
@@ -33,7 +28,23 @@ class GunQuestion extends React.Component {
           user_id: 1
         })
       })
-      this.setState({submitted:true})
+    }
+
+    handleImportanceChange = (event) => {
+      this.setState({importance: event.target.value})
+    }
+
+    handleReformChange = (event) => {
+        this.setState({stance_id: event.target.value})
+    }
+
+    handleFormSubmit = (event) => {
+      event.preventDefault()
+    
+      this.setState({submitted:true, loading:true})
+     
+      this.postRequest(event)
+      
     }
 
     render() {
@@ -61,10 +72,10 @@ class GunQuestion extends React.Component {
          </div>
          <button type="submit">submit</button>
        </form>
-       else 
-        returnValue =  
-        <CandidateContainer
-        />
+
+        else 
+        returnValue = <Loading/>
+        
       return(
       <div>
        {returnValue}

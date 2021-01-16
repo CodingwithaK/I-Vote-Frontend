@@ -19,7 +19,7 @@ class Homepage extends React.Component {
       render() {
 
         return (
-          <Container>
+          <Container >
             <h1>I-Vote Candidate Matcher</h1>
             <br />
             <ClimateQuestion/>
@@ -27,8 +27,8 @@ class Homepage extends React.Component {
             <AbortionQuestion/>
             <EducationQuestion/>
             <ImmigrationQuestion/>
-           <ReligionQuestion/>
-           <GunQuestion />
+            <ReligionQuestion/>
+            <GunQuestion/>
           </Container>
         )
       }
