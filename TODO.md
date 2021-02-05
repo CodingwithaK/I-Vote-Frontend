@@ -8,6 +8,6 @@
 - Click on each candidate it gives you a little bio and how they lean on issues
 - If you have taken survey it gives you the match percentage
 - Pick a color scheme and look into how much of each color
-- 
+-
 
 
