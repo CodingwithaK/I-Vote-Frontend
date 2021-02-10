@@ -26,11 +26,11 @@ class CandidateCard extends React.Component {
     return (
       <Card onClick={this.handleOnClick}>
         <div>
-          <div className="image">
-            {cardInfo}
-          </div>
           <div className="content">
             <div className="header">{ballot_name}</div>
+          </div>
+          <div className="image">
+            {cardInfo}
           </div>
           
         </div>

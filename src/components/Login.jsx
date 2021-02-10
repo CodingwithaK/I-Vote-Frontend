@@ -8,32 +8,33 @@ export default function Login() {
     const [hasAccount, setHasAccount] = useState(false)
     
     const login = () =>{
-        
-    fetch(url - 'api' + 'login', {
+        console.log("attempting to log in")
+    fetch(+ `http://localhost:3000/api/login/${username}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         }, 
         body: JSON.stringify({ 
+            
             username: username,
             password: password
+            
          })
       })
-      .then(response => response.json())
-      .then(response => console.log(response))
+     
 
     }
     
    
 
      const createUser = () => {
-
+      
         fetch(url+'/users',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                Accept: 'application/json'},
+                'Accept': 'application/json'},
                 body: JSON.stringify({
                     user:{
                         username: username,
@@ -42,17 +43,21 @@ export default function Login() {
                 })
         })
         .then(response => response.json())
-        .then(console.log)
+        .then(console.log())
     }
     const handleFormSubmit = (event) => {
+        console.log("form working")
         event.preventDefault()
          if (hasAccount === false)
+    
          createUser()
          else 
+         
          login()
     }
 
     const handleButtonClick = (event) => {
+        
         event.preventDefault()
         if (hasAccount === false)
         setHasAccount(!hasAccount)
