@@ -1,5 +1,5 @@
 import React from `react`
-
+// In development yet to be integrated
 class Search extends React.Component {
     state = {
         candidateCollection = [],

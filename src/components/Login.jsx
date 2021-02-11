@@ -9,7 +9,7 @@ export default function Login() {
     
     const login = () =>{
         console.log("attempting to log in")
-    fetch(+ `http://localhost:3000/api/login/${username}`, {
+    fetch(`http://localhost:3000/api/login/${username}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

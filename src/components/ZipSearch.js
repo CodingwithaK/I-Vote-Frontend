@@ -3,6 +3,10 @@ import { fetchCandidates } from './actions/candidateActions'
 import { useDispatch, useSelector } from 'react-redux'
 import { zipcodeSubmitAction } from './actions/zipcodeSubmitAction'
 
+
+// In development yet to be integrated
+
+
 const ZipSearch = (props) =>  {
     const dispatch = useDispatch()
     const candidates = useSelector(state => state.candidates)
