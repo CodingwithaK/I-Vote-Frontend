@@ -10,7 +10,7 @@ state = {loaded: false}
        
             this.setState({ loaded: true})
   
-           },2000)
+           },5000)
     
 
  }  
