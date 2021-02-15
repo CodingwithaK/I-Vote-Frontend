@@ -36,33 +36,38 @@ class EducationQuestion extends React.Component {
     render() {
       let returnValue
       if(this.state.submitted === false)
-      returnValue = <form className="Education"  onSubmit={this.handleFormSubmit} >
-      <p>
-      Should the federal government pay for tuition at colleges and universities?
-      </p>
+      returnValue = 
       
-      <div onChange={event => this.handleReformChange(event)}>
-       <input type="radio" value="0" name="Education" issue_id="4" /> No
-       <input type="radio" value="1" name="Education" issue_id="4" />  Other stance 
-       <input type="radio" value="2"name="Education" issue_id="4" /> Yes
-       </div>
-       <p>How important is it to you, for your ideal candidate to share the same view as you?</p>
-       <div onChange={event => this.handleImportanceChange(event)}>
-       <input type="radio" value="0" name="Education Importance" issue_id="4" /> Not Important 
-       <input type="radio" value="1" name="Education Importance" issue_id="4" /> A Little Important
-       <input type="radio" value="2" name="Education Importance" issue_id="4" /> Somewhat Important 
-       <input type="radio" value="3" name="Education Importance" issue_id="4" /> Very Important
-       <input type="radio" value="4" name="Education Importance" issue_id="4" /> Mandatory 
-       </div>
-       <button type="submit">submit</button>
-     </form>
-     else
-     returnValue = <div/>
+      <form className="Education"  onSubmit={this.handleFormSubmit} >
+        <p>
+        Should the federal government pay for tuition at colleges and universities?
+        </p>
+        
+        <div onChange={event => this.handleReformChange(event)}>
+          <input type="radio" value="0" name="Education" issue_id="4" /> No
+          <input type="radio" value="1" name="Education" issue_id="4" />  Other stance 
+          <input type="radio" value="2"name="Education" issue_id="4" /> Yes
+        </div>
+        <p>
+          How important is it to you, for your ideal candidate to share the same view as you?
+        </p>
+        <div onChange={event => this.handleImportanceChange(event)}>
+          <input type="radio" value="0" name="Education Importance" issue_id="4" /> Not Important 
+          <input type="radio" value="1" name="Education Importance" issue_id="4" /> A Little Important
+          <input type="radio" value="2" name="Education Importance" issue_id="4" /> Somewhat Important 
+          <input type="radio" value="3" name="Education Importance" issue_id="4" /> Very Important
+          <input type="radio" value="4" name="Education Importance" issue_id="4" /> Mandatory 
+        </div>
+        <button type="submit">
+          submit
+        </button>
+      </form>
+      else
+      returnValue = <div/>
       return(
       <div>
-      {returnValue}
-      </div>
-      )
+        {returnValue}
+      </div>)
     }
   }
   export default EducationQuestion

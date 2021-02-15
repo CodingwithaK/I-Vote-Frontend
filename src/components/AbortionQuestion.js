@@ -28,42 +28,44 @@ class AbortionQuestion extends React.Component {
           stance_id: parseInt(this.state.stance_id),
           importance: parseInt(this.state.importance),
           user_id: 1
+          // change this after login implemented
         })
       })
       this.setState({submitted: true})
     }
-
     render() {
       let returnValue
       if(this.state.submitted === false)
-        returnValue =  <form className="Abortion"  onSubmit={this.handleFormSubmit} >
-        <p>
+        returnValue =  
+        <form className="Abortion"  onSubmit={this.handleFormSubmit} >
+          <p>
             What is your stance on abortion?
-        </p>
-        
-        <div onChange={event => this.handleReformChange(event)}>
-        <input type="radio" value="0" name="Abortion" issue_id="3" /> Pro-Life
-        <input type="radio" value="1" name="Abortion" issue_id="3" />  Other Stance
-        <input type="radio" value="2"name="Abortion" issue_id="3" /> Pro-Choice
-        </div>
-        <p>How important is it to you, for your ideal candidate to share the same view as you?</p>
-        <div onChange={event => this.handleImportanceChange(event)}>
-        <input type="radio" value="0" name="Abortion Importance" issue_id="3" /> Not Important 
-        <input type="radio" value="1" name="Abortion Importance" issue_id="3" /> A Little Important
-        <input type="radio" value="2" name="Abortion Importance" issue_id="3" /> Somewhat Important 
-        <input type="radio" value="3" name="Abortion Importance" issue_id="3" /> Very Important
-        <input type="radio" value="4" name="Abortion Importance" issue_id="3" /> Mandatory 
-        </div>
-        <button type="submit">submit</button>
-      </form>
+          </p>
+          
+          <div onChange={event => this.handleReformChange(event)}>
+          <input type="radio" value="0" name="Abortion" issue_id="3" /> Pro-Life
+          <input type="radio" value="1" name="Abortion" issue_id="3" />  Other Stance
+          <input type="radio" value="2"name="Abortion" issue_id="3" /> Pro-Choice
+          </div>
+          <p>
+            How important is it to you, for your ideal candidate to share the same view as you?
+          </p>
+          <div onChange={event => this.handleImportanceChange(event)}>
+          <input type="radio" value="0" name="Abortion Importance" issue_id="3" /> Not Important 
+          <input type="radio" value="1" name="Abortion Importance" issue_id="3" /> A Little Important
+          <input type="radio" value="2" name="Abortion Importance" issue_id="3" /> Somewhat Important 
+          <input type="radio" value="3" name="Abortion Importance" issue_id="3" /> Very Important
+          <input type="radio" value="4" name="Abortion Importance" issue_id="3" /> Mandatory 
+          </div>
+          <button type="submit">submit</button>
+        </form>
       else
         returnValue = <div/>
-      
+        // change this to be the next question
       return(
       <div>
-     {returnValue}
-      </div>
-      )
+        {returnValue}
+      </div>)
     }
   }
   export default AbortionQuestion 

@@ -11,8 +11,7 @@ class GunQuestion extends React.Component {
       issue_id:7,
       submitted: false,
       loading:false,
-      
-   
+
     }
  
     postRequest = (event) => {

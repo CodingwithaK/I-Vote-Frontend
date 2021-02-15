@@ -7,8 +7,6 @@ class ClimateQuestion extends React.Component {
       issue_id:1,
       submitted: false
     }
- 
-
     handleImportanceChange = (event) => {
       this.setState({importance: event.target.value})
     }
@@ -28,11 +26,11 @@ class ClimateQuestion extends React.Component {
           stance_id: parseInt(this.state.stance_id),
           importance: parseInt(this.state.importance),
           user_id: 1
+           // change this after login implemented
         })
       })
       this.setState({submitted:true})
     }
-
     render() {
       let returnValue
       if(this.state.submitted === false)
@@ -45,22 +43,27 @@ class ClimateQuestion extends React.Component {
        <input type="radio" value="0" name="Climate Change" issue_id="1" /> No
        <input type="radio" value="1" name="Climate Change" issue_id="1" />  Other Stance
        <input type="radio" value="2"name="Climate Change" issue_id="1" /> Yes
-       </div>
-       <p>How important is it to you, for your ideal candidate to share the same view as you?</p>
-       <div onChange={event => this.handleImportanceChange(event)}>
-       <input type="radio" value="0" name="Climate Importance" issue_id="1" /> Not Important 
-       <input type="radio" value="1" name="Climate Importance" issue_id="1" /> A Little Important
-       <input type="radio" value="2" name="Climate Importance" issue_id="1" /> Somewhat Important 
-       <input type="radio" value="3" name="Climate Importance" issue_id="1" /> Very Important
-       <input type="radio" value="4" name="Climate Importance" issue_id="1" /> Mandatory 
-       </div>
-       <button type="submit">submit</button>
+      </div>
+      <p>
+        How important is it to you, for your ideal candidate to share the same view as you?
+      </p>
+      <div onChange={event => this.handleImportanceChange(event)}>
+        <input type="radio" value="0" name="Climate Importance" issue_id="1" /> Not Important 
+        <input type="radio" value="1" name="Climate Importance" issue_id="1" /> A Little Important
+        <input type="radio" value="2" name="Climate Importance" issue_id="1" /> Somewhat Important 
+        <input type="radio" value="3" name="Climate Importance" issue_id="1" /> Very Important
+        <input type="radio" value="4" name="Climate Importance" issue_id="1" /> Mandatory 
+      </div>
+      <button type="submit">
+        submit
+      </button>
      </form>
      else
       returnValue = <div/>
+      // change this to the next question
       return(
       <div>
-      {returnValue}
+        {returnValue}
       </div>
       )
     }

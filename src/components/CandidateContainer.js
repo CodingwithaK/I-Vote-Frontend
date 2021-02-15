@@ -4,36 +4,26 @@ import Loading from './Loading'
 import { Card } from 'semantic-ui-react'
 const URL = "http://localhost:3000/api/candidates"
 class CandidateContainer extends React.Component {
-  state = {
-    candidates:[]}
+  state = {candidates:[]}
 
     componentDidMount(){
       fetch(URL)
-          .then(res=>res.json())
-         
-          .then(candidates => 
-     
-              this.setState({candidates:candidates})
-            
+          .then(res=>res.json())         
+          .then(candidates =>     
+              this.setState({candidates:candidates})            
            )
-    
     }
-
   render() {
-    
     return (
-      <div>
+      <div>       
+      <Card.Group itemsPerRow={3}>   
+      {this.state.candidates.map(candidate =>     
+        <CandidateCard
+        candidate={candidate}
+        key={candidate.id}/>)}
         
-      <Card.Group itemsPerRow={3}>
-     
-      {this.state.candidates.map(candidate => 
-      
-      <CandidateCard
-      candidate={candidate}
-      key={candidate.id}/>)}
-      
       </Card.Group>
-        </div>
+      </div>
     )
   }
 }
