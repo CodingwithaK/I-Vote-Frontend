@@ -12,15 +12,17 @@ class CandidateCard extends React.Component {
     })
   }
   render() {
-    const{ballot_name,img}= this.props.candidate
-    const{percentage}= this.props.candidate.candidate_users[0]
+    
+    const{ballot_name,img,id}= this.props.candidate
+    const{percentage}= JSON.parse(localStorage.getItem("matches"))[id - 1]
     let cardInfo
     if (this.state.isFront === true)
         cardInfo = <img src = {img} alt="oh no!"/>
     else 
+    
         cardInfo =  
         <p> 
-          {percentage}% match 
+          {percentage.toFixed(2)}% match 
         </p>
     return (
       <Card onClick={this.handleOnClick}>

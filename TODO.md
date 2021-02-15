@@ -1,7 +1,8 @@
 - add loading screen for matches @done
 - Fetch Match Percentage @done
-- Get each question one after another
+- Get each question one after another @done
 - Create Login Screen @done
+- add current user upon registration or log in 
 - Make sure the survey answers and matches are saved to user
 - Create Header with login on the right and ivote on the left 
 - Side bar that directs you to all candidates 

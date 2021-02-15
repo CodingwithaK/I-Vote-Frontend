@@ -1,4 +1,5 @@
 import React from "react"
+import EducationQuestion from './EducationQuestion'
 const url = "http://localhost:3000/api/"
 class AbortionQuestion extends React.Component {
     state = {
@@ -27,8 +28,8 @@ class AbortionQuestion extends React.Component {
           issue_id: parseInt(this.state.issue_id),
           stance_id: parseInt(this.state.stance_id),
           importance: parseInt(this.state.importance),
-          user_id: 1
-          // change this after login implemented
+          user_id: localStorage.id
+         
         })
       })
       this.setState({submitted: true})
@@ -44,8 +45,8 @@ class AbortionQuestion extends React.Component {
           
           <div onChange={event => this.handleReformChange(event)}>
           <input type="radio" value="0" name="Abortion" issue_id="3" /> Pro-Life
-          <input type="radio" value="1" name="Abortion" issue_id="3" />  Other Stance
           <input type="radio" value="2"name="Abortion" issue_id="3" /> Pro-Choice
+          <input type="radio" value="1" name="Abortion" issue_id="3" />  Other Stance
           </div>
           <p>
             How important is it to you, for your ideal candidate to share the same view as you?
@@ -60,7 +61,7 @@ class AbortionQuestion extends React.Component {
           <button type="submit">submit</button>
         </form>
       else
-        returnValue = <div/>
+        returnValue = <EducationQuestion/>
         // change this to be the next question
       return(
       <div>

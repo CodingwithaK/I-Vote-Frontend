@@ -1,4 +1,5 @@
 import React from "react"
+import AbortionQuestion from './AbortionQuestion'
 const url = "http://localhost:3000/api/"
 class HealthcareQuestion extends React.Component {
     state = {
@@ -27,7 +28,7 @@ class HealthcareQuestion extends React.Component {
           issue_id: parseInt(this.state.issue_id),
           stance_id: parseInt(this.state.stance_id),
           importance: parseInt(this.state.importance),
-          user_id: 1
+          user_id: localStorage.id
         })
       })
       this.setState({submitted:true})
@@ -42,9 +43,9 @@ class HealthcareQuestion extends React.Component {
           </p>
           
           <div onChange={event => this.handleReformChange(event)}>
+          <input type="radio" value="2"name="Healthcare" issue_id="2" /> Yes
           <input type="radio" value="0" name="Healthcare" issue_id="2" /> No
           <input type="radio" value="1" name="Healthcare" issue_id="2" /> Other Stance
-          <input type="radio" value="2"name="Healthcare" issue_id="2" /> Yes
           </div>
           <p>How important is it to you, for your ideal candidate to share the same view as you?</p>
           <div onChange={event => this.handleImportanceChange(event)}>
@@ -57,7 +58,7 @@ class HealthcareQuestion extends React.Component {
           <button type="submit">submit</button>
         </form>
       else
-        returnValue = <div/>
+        returnValue = <AbortionQuestion/>
       return(
       <div>
       {returnValue}

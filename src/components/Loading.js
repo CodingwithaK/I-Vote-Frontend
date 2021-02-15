@@ -15,7 +15,7 @@ state =
        .then ((matches)=> this.setState({candidateUser: matches[0].candidate_users}))
        
 
-       },5000)
+       },6000)
    
     
     

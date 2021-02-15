@@ -1,4 +1,5 @@
 import React from "react"
+import HealthcareQuestion from './HealthcareQuestion'
 const url = "http://localhost:3000/api/"
 class ClimateQuestion extends React.Component {
     state = {
@@ -25,7 +26,7 @@ class ClimateQuestion extends React.Component {
           issue_id: parseInt(this.state.issue_id),
           stance_id: parseInt(this.state.stance_id),
           importance: parseInt(this.state.importance),
-          user_id: 1
+          user_id: localStorage.id
            // change this after login implemented
         })
       })
@@ -40,9 +41,9 @@ class ClimateQuestion extends React.Component {
       </p>
       
       <div onChange={event => this.handleReformChange(event)}>
+       <input type="radio" value="2"name="Climate Change" issue_id="1" /> Yes
        <input type="radio" value="0" name="Climate Change" issue_id="1" /> No
        <input type="radio" value="1" name="Climate Change" issue_id="1" />  Other Stance
-       <input type="radio" value="2"name="Climate Change" issue_id="1" /> Yes
       </div>
       <p>
         How important is it to you, for your ideal candidate to share the same view as you?
@@ -59,7 +60,7 @@ class ClimateQuestion extends React.Component {
       </button>
      </form>
      else
-      returnValue = <div/>
+      returnValue = <HealthcareQuestion/>
       // change this to the next question
       return(
       <div>
