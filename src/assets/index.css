@@ -1,0 +1,18 @@
+body {
+  font-family: 'Fira';
+  margin: 0px;
+}
+
+html {
+  background-color: #861F41;
+  font-size: medium;
+}
+
+
+@font-face {
+  font-family: 'Fira';
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  src: url('./FiraSans.ttf') format('truetype');
+}
