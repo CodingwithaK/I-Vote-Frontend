@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container } from 'semantic-ui-react'
-
 import Login from './Login'
-
+import SideBar from './SideBar'
+import ClimateQuestion from './ClimateQuestion'
 
 class Homepage extends React.Component {
 
@@ -13,9 +13,10 @@ class Homepage extends React.Component {
 
         return (
           <Container >
-            <h1>I-Vote Candidate Matcher</h1>
+            <SideBar/>
           <div>
-            <Login/>
+            {/* <Login/> */}
+            <ClimateQuestion/>
           </div>
             <br />
             
