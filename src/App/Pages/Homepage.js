@@ -9,11 +9,13 @@ export default function Homepage({ iw })  {
     
 
       return(
+        
 
+        
           <HomeDiv img={background} >
               
           </HomeDiv>
-      
+          
       ) 
 
         

@@ -37,8 +37,9 @@ function App () {
     <Router>
 			<AppDiv>
 				<ScrollingProvider>
+					<Section id='Header'>
 					<Header iw={innerWidth} ih={innerHeight} sp={scrollPosition}/>
-					
+					</Section>
 					<Section id='Home'>
 						<Homepage iw={innerWidth} ih={innerHeight} sp={scrollPosition}/>
 					</Section>

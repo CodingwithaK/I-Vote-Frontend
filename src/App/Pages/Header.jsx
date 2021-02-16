@@ -10,31 +10,37 @@ export default function Header({iw,ih, sp }) {
 	const onHome = sp < ih - 20
 
 return(
-    <HeaderWrapper iw={iw}>
+    <HeaderWrapper 
+		iw={iw}>
 
         <HeaderLogoImg src={logo}/>
 
-        <HeaderButton
+        <HeaderButton 
+			iw={iw}
 			onClick={missionSection.onClick}
 			selected={missionSection.selected}
 			onHome={onHome}>
 				Our Mission
 		</HeaderButton>
-        <HeaderButton
+        <HeaderButton 
+			iw={iw}
 			onClick={quizSection.onClick}
 			selected={quizSection.selected}
 			onHome={onHome}>
 				Quiz
 		</HeaderButton>
 
-		<HeaderButton
+		<HeaderButton 
+			iw={iw}
 			onClick={contactSection.onClick}
 			selected={contactSection.selected}
 			onHome={onHome}>
 				Contact
 		</HeaderButton>
 
-        <HeaderButton>Logout</HeaderButton>
+        <HeaderButton iw={iw}>
+			Logout
+		</HeaderButton>
 
     </HeaderWrapper>
   
