@@ -1,8 +1,8 @@
 import React from 'react'
 import { useScrollSection } from "react-scroll-section"
 import {HeaderWrapper, HeaderButton, HeaderLogoImg } from '../AppStyles'
-import logo from '../../assets/images/logo.png'
-   
+import redLogo from '../../assets/images/logo.png'
+import blackLogo from '../../assets/images/black_logo.png'
 export default function Header({iw,ih, sp }) {
 	const missionSection = useScrollSection('Mission');
 	const quizSection = useScrollSection('Quiz');
@@ -13,7 +13,7 @@ return(
     <HeaderWrapper 
 		iw={iw}>
 
-        <HeaderLogoImg src={logo}/>
+        <HeaderLogoImg src={ sp < 520? redLogo : blackLogo}/>
 
         <HeaderButton 
 			iw={iw}

@@ -45,7 +45,7 @@ function App () {
 					</Section>
 
 					<Section id='Mission'>
-						<Mission iw={innerWidth} />
+						<Mission iw={innerWidth} ih={innerHeight}/>
 						{/* build out */}
 					</Section>
 					<Section id='Quiz'>

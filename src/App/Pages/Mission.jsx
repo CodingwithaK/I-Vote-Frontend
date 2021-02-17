@@ -1,16 +1,16 @@
 import React from 'react'
 import {MissionDiv} from '../AppStyles'
 
-export default function Mission ({}){
+export default function Mission ({iw, ih}){
 
 return (
-    <MissionDiv>
+    <MissionDiv iw={iw}>
     
     <h1>
-        Our mission
+        Our Mission
     </h1>
     <h2>
-
+        I-Vote's goal is to improve youth voter turnout by giving voter's the opportunity to learn about which candidates best support their values. 
     </h2>
 
     </MissionDiv>

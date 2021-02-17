@@ -14,7 +14,7 @@ export const HomeDiv = styled.div `
 
     height:90vh;
     background-color: ${stone};
-    background-image: url(${({img})=> img});
+    background-image: url(${({img})=> img}) ;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -43,7 +43,8 @@ export const HomeDiv = styled.div `
     }
 `
 export const HeaderWrapper = styled.div `
-    background-color: ${smoke};
+background-color: transparent;
+    // background-color: ${smoke};
     position: fixed;
     width: ${({ iw }) => iw - 40 + "px"};
     text-align: ${({ iw }) => iw > 600 ? `right`: `center` };
@@ -105,21 +106,48 @@ export const HeaderButton = styled.a `
         background-color: ${burnt};
         padding-left: ${({ iw }) => dynamicPadding(iw) + "px"};
         padding-right: ${({ iw }) => dynamicPadding(iw) + "px"};
-        display: flex;
+        display:flex;
+        flex-direction:column;
         align-items: center;
-        justify-content: center;
-        flex-direction: column;
+        // justify-content: space-between;
+       
         color: white;
 
         h1 {
+       
             font-size: 6rem;
-            margin-top: 15rem;
-            margin-bottom: 1rem;
+           
+            
         }
 
         h2 {
-            margin-top: 0;
             font-style: italic;
         }
 
-    ` 
+        
+        ` 
+        export const QuizDiv = styled.div `
+        height:90vh;
+        background-color: ${stone};
+        padding-left: ${({ iw }) => dynamicPadding(iw) + "px"};
+        padding-right: ${({ iw }) => dynamicPadding(iw) + "px"};
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        // justify-content: space-between;
+       
+        color: white;
+
+        h1 {
+       
+            font-size: 6rem;
+           
+            
+        }
+
+        h2 {
+            font-style: italic;
+        }
+        
+        
+        `
