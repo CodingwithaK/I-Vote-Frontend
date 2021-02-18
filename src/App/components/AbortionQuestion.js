@@ -1,5 +1,6 @@
 import React from "react"
 import EducationQuestion from './EducationQuestion'
+import {FormDiv} from '../AppStyles'
 const url = "http://localhost:3000/api/"
 class AbortionQuestion extends React.Component {
     state = {
@@ -38,7 +39,7 @@ class AbortionQuestion extends React.Component {
       let returnValue
       if(this.state.submitted === false)
         returnValue =  
-        <formDiv>
+        <FormDiv>
           <h2>Question 3</h2>
         <form className="Abortion"  onSubmit={this.handleFormSubmit} >
           <p>
@@ -62,7 +63,7 @@ class AbortionQuestion extends React.Component {
           </div>
           <button type="submit">submit</button>
         </form>
-        </formDiv>
+        </FormDiv>
       else
         returnValue = <EducationQuestion/>
         // change this to be the next question

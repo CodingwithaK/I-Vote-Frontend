@@ -1,5 +1,6 @@
 import React from "react"
 import HealthcareQuestion from './HealthcareQuestion'
+import {FormDiv} from '../AppStyles'
 const url = "http://localhost:3000/api/"
 class ClimateQuestion extends React.Component {
     state = {
@@ -8,6 +9,8 @@ class ClimateQuestion extends React.Component {
       issue_id:1,
       submitted: false
     }
+
+    
     handleImportanceChange = (event) => {
       this.setState({importance: event.target.value})
     }
@@ -16,7 +19,7 @@ class ClimateQuestion extends React.Component {
     }
     handleFormSubmit = (event) => {
       event.preventDefault()
-      
+     
       fetch(url+"stances", {
         method: "POST",
         headers: {
@@ -36,7 +39,7 @@ class ClimateQuestion extends React.Component {
       let returnValue
       if(this.state.submitted === false)
       returnValue =
-      <formDiv>
+      <FormDiv>
 
      
       <h2>
@@ -67,7 +70,7 @@ class ClimateQuestion extends React.Component {
         submit
       </button>
      </form>
-     </formDiv>
+     </FormDiv>
      else
       returnValue = <HealthcareQuestion/>
       // change this to the next question

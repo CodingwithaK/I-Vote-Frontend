@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
-import CandidateContainer from './CandidateContainer'
+import Loading from './Loading'
 import ClimateQuestion from './ClimateQuestion'
 const url = "http://localhost:3000/api/"
 export default function Login() {
@@ -53,8 +53,8 @@ export default function Login() {
             localStorage.setItem("matches", JSON.stringify(res.matches))
         setMatches(res.matches)
         
-            console.log(localStorage)
-            console.log(res.matches)
+           
+           
         
       })
 
@@ -63,7 +63,7 @@ export default function Login() {
    
 
      const createUser = () => {
-      
+        
         fetch(url+'/users',{
             method: 'POST',
             headers: {
@@ -104,6 +104,8 @@ let returnValue
     returnValue = 
     <div>
     <div>
+        <h2>Find Out How Well Your Values Align With Your Candidates</h2>
+        <h2>A User Must Be Signed In To Take The test</h2>
     <Form onSubmit={handleFormSubmit}>
         <Form.Group size="lg" controlId="username">
             <Form.Label>Username</Form.Label>
@@ -131,12 +133,13 @@ let returnValue
 
     <div>
     {hasAccount? 'Dont have an account?': 'Already have an account?'}
-    <Button onClick={handleButtonClick}>{hasAccount? 'Click to sign up instead' : 'Click to log in instead'}</Button>
+    <Button onClick={handleButtonClick}>{hasAccount? 'Sign Up' : 'Log In'}</Button>
     </div>
     </div>
  }
  else if (matches.length >= 7){
-     returnValue = <CandidateContainer/>
+
+     returnValue = <Loading/>
  }
  else 
     returnValue = <ClimateQuestion/>

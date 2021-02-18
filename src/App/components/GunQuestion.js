@@ -1,7 +1,7 @@
 
 
 import React from "react"
-
+import {FormDiv} from '../AppStyles'
 import Loading from './Loading'
 const url = "http://localhost:3000/api/"
 class GunQuestion extends React.Component {
@@ -50,7 +50,7 @@ class GunQuestion extends React.Component {
       let returnValue
       if (this.state.submitted === false)
        returnValue =  
-       <formDiv>
+       <FormDiv>
          <h2>Question 7</h2>
           <form className="Gun"  onSubmit={this.handleFormSubmit} >
           <p>
@@ -72,7 +72,7 @@ class GunQuestion extends React.Component {
           </div>
           <button type="submit">submit</button>
           </form>
-          </formDiv>
+          </FormDiv>
         else 
           returnValue = <Loading/>
         

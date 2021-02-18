@@ -46,11 +46,11 @@ function App () {
 
 					<Section id='Mission'>
 						<Mission iw={innerWidth} ih={innerHeight}/>
-						{/* build out */}
+						
 					</Section>
 					<Section id='Quiz'>
 						<Quiz iw={innerWidth} ih={innerHeight} />
-						{/* build out */}
+						
 					</Section>
 					<Section id='Contact'>
 						<Contact iw={innerWidth} />

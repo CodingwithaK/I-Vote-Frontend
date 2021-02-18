@@ -1,7 +1,7 @@
 import React from 'react'
 import {MissionDiv} from '../AppStyles'
 
-export default function Mission ({iw, ih}){
+export default function Mission ({iw}){
 
 return (
     <MissionDiv iw={iw}>

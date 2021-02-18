@@ -1,5 +1,6 @@
 import React from "react"
 import AbortionQuestion from './AbortionQuestion'
+import {FormDiv} from '../AppStyles'
 const url = "http://localhost:3000/api/"
 class HealthcareQuestion extends React.Component {
     state = {
@@ -38,7 +39,7 @@ class HealthcareQuestion extends React.Component {
       let returnValue 
       if (this.state.submitted ===false)
       returnValue = 
-      <formDiv>
+      <FormDiv>
         <h2>Question 2</h2>
       <form className="Healthcare"  onSubmit={this.handleFormSubmit} >
           <p>
@@ -60,7 +61,7 @@ class HealthcareQuestion extends React.Component {
           </div>
           <button type="submit">submit</button>
         </form>
-       </formDiv>
+       </FormDiv>
       else
         returnValue = <AbortionQuestion/>
       return(
