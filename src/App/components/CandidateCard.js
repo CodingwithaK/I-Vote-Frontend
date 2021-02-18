@@ -3,17 +3,10 @@ import { Card } from 'semantic-ui-react'
 import {CardDiv} from '../AppStyles'
 class CandidateCard extends React.Component {
 
-  state={
-    isFront:true,
-    matches: null}
+  state={matches: null}
   
 
-  handleOnClick= () => {
-    
-    this.setState({
-      isFront:!this.state.isFront
-    })
-  }
+  
   render() {
  
     
@@ -24,12 +17,12 @@ class CandidateCard extends React.Component {
     let cardInfo = <a href={website} target="_blank"><img src = {img} alt="oh no!"/></a>
    
     return (
-      <CardDiv>
-      <Card onClick={this.handleOnClick}>
+     <CardDiv>
+     
         <div>
           <div className="content">
             <div> </div>
-            <div className="header">{ballot_name} <div> </div> {office_name} </div>
+            <div className="header">{ballot_name} <div/> {office_name} </div>
           </div>
 
           <div className="image">
@@ -37,8 +30,9 @@ class CandidateCard extends React.Component {
           </div>
           { percentage.toFixed(2)}% match
         </div>
-      </Card>
+    
       </CardDiv>
+      
     )
   }
 }

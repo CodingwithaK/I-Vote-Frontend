@@ -127,14 +127,15 @@ export const HeaderButton = styled.a `
         
         ` 
         export const QuizDiv = styled.div `
-        height:90vh;
+        height:140vh;
         background-color: ${maroon};
         padding-left: ${({ iw }) => dynamicPadding(iw) + "px"};
         padding-right: ${({ iw }) => dynamicPadding(iw) + "px"};
         display:flex;
-        flex-direction:column;
-        align-items: center;
-        // justify-content: space-between;
+        align-text:left;
+        align-items:center;
+        
+        
        
         color: white;
 
@@ -192,8 +193,16 @@ export const HeaderButton = styled.a `
         }
         `
         export const FormDiv = styled.div `
+        padding-right:320px;
+        `
+        export const CardDivs = styled.div `
+       
+        display: flex;
+        
+       flex-wrap: wrap;
+        
 
         `
         export const CardDiv = styled.div `
-        
+        padding:20px 20px;
         `
