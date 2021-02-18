@@ -35,7 +35,15 @@ class ClimateQuestion extends React.Component {
     render() {
       let returnValue
       if(this.state.submitted === false)
-      returnValue = <form className="Climate Change"  onSubmit={this.handleFormSubmit} >
+      returnValue =
+      <formDiv>
+
+     
+      <h2>
+        Question 1
+      </h2>
+        
+      <form className="Climate Change"  onSubmit={this.handleFormSubmit} >
       <p>
       Should the government increase environmental regulations to prevent climate change?
       </p>
@@ -59,6 +67,7 @@ class ClimateQuestion extends React.Component {
         submit
       </button>
      </form>
+     </formDiv>
      else
       returnValue = <HealthcareQuestion/>
       // change this to the next question

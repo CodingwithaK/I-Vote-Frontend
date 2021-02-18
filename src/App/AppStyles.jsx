@@ -44,7 +44,7 @@ export const HomeDiv = styled.div `
 `
 export const HeaderWrapper = styled.div `
 background-color: transparent;
-    // background-color: ${smoke};
+   
     position: fixed;
     width: ${({ iw }) => iw - 40 + "px"};
     text-align: ${({ iw }) => iw > 600 ? `right`: `center` };
@@ -74,7 +74,7 @@ export const HeaderButton = styled.a `
     cursor: pointer;
     text-align: center;
 	
-	background: rgba(255, 255, 255, 0);
+	
 	line-height: 1.4;
 	padding: 0.55em;
 	text-decoration: none;
@@ -82,7 +82,7 @@ export const HeaderButton = styled.a `
 	&:after,
 	&:before {
 		backface-visibility: hidden;
-		border: 1px solid rgba(255, 255, 255, 0);
+		border: 1px solid rgba(255, 0, 255, 0);
 		bottom: 0px;
 		content: " ";
 		display: block;
@@ -151,3 +151,43 @@ export const HeaderButton = styled.a `
         
         
         `
+        export const LoadingDiv = styled.div`
+        display: flex;
+        padding: 20px 20px;
+        h1 {
+            font-style: italic;
+        }
+        `
+
+export const StyledSpinner = styled.svg`
+  animation: rotate 1s linear infinite;
+  margin: 90px 50px;
+  width: 100px;
+  height: 100px;
+
+  & .path {
+    stroke: #5652bf;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
+  }
+`

@@ -38,6 +38,8 @@ class AbortionQuestion extends React.Component {
       let returnValue
       if(this.state.submitted === false)
         returnValue =  
+        <formDiv>
+          <h2>Question 3</h2>
         <form className="Abortion"  onSubmit={this.handleFormSubmit} >
           <p>
             What is your stance on abortion?
@@ -60,6 +62,7 @@ class AbortionQuestion extends React.Component {
           </div>
           <button type="submit">submit</button>
         </form>
+        </formDiv>
       else
         returnValue = <EducationQuestion/>
         // change this to be the next question

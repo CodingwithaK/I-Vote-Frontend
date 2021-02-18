@@ -38,7 +38,8 @@ class EducationQuestion extends React.Component {
       let returnValue
       if(this.state.submitted === false)
       returnValue = 
-      
+      <formDiv>
+        <h2>Question 4</h2>
       <form className="Education"  onSubmit={this.handleFormSubmit} >
         <p>
         Should the federal government pay for tuition at colleges and universities?
@@ -63,6 +64,7 @@ class EducationQuestion extends React.Component {
           submit
         </button>
       </form>
+      </formDiv>
       else
       returnValue = <ImmigrationQuestion/>
       return(

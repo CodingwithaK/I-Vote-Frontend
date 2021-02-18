@@ -37,7 +37,10 @@ class ImmigrationQuestion extends React.Component {
     render() {
       let returnValue
       if(this.state.submitted === false)
-      returnValue =  <form className="Immigration"  onSubmit={this.handleFormSubmit} >
+      returnValue = 
+      <formDiv>
+        <h2>Question 5</h2>
+      <form className="Immigration"  onSubmit={this.handleFormSubmit} >
       <p>
       Should the U.S. build a wall along the southern border?
       </p>
@@ -57,7 +60,7 @@ class ImmigrationQuestion extends React.Component {
        </div>
        <button type="submit">submit</button>
      </form>
-     
+     </formDiv>
       else
       returnValue = <ReligionQuestion/>
       return(

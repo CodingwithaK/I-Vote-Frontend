@@ -50,6 +50,8 @@ class GunQuestion extends React.Component {
       let returnValue
       if (this.state.submitted === false)
        returnValue =  
+       <formDiv>
+         <h2>Question 7</h2>
           <form className="Gun"  onSubmit={this.handleFormSubmit} >
           <p>
           Should there be more restrictions on the current process of purchasing a gun?
@@ -70,7 +72,7 @@ class GunQuestion extends React.Component {
           </div>
           <button type="submit">submit</button>
           </form>
-
+          </formDiv>
         else 
           returnValue = <Loading/>
         

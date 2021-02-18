@@ -37,7 +37,10 @@ class HealthcareQuestion extends React.Component {
     render() {
       let returnValue 
       if (this.state.submitted ===false)
-      returnValue = <form className="Healthcare"  onSubmit={this.handleFormSubmit} >
+      returnValue = 
+      <formDiv>
+        <h2>Question 2</h2>
+      <form className="Healthcare"  onSubmit={this.handleFormSubmit} >
           <p>
           Should the federal government increase funding of health care for low income individuals ?
           </p>
@@ -57,6 +60,7 @@ class HealthcareQuestion extends React.Component {
           </div>
           <button type="submit">submit</button>
         </form>
+       </formDiv>
       else
         returnValue = <AbortionQuestion/>
       return(

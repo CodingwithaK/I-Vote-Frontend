@@ -39,7 +39,10 @@ class ReligionQuestion extends React.Component {
     render() {
       let returnValue
       if(this.state.submitted === false)
-        returnValue = <form className="Religion"  onSubmit={this.handleFormSubmit} >
+        returnValue = 
+        <formDiv>
+          <h2>Question 6</h2>
+        <form className="Religion"  onSubmit={this.handleFormSubmit} >
         <p>
         Should a business be able to deny service to a customer if the request conflicts with the owner’s religion?
         </p>
@@ -59,6 +62,7 @@ class ReligionQuestion extends React.Component {
          </div>
          <button type="submit">submit</button>
        </form>
+       </formDiv>
        else
        returnValue = <GunQuestion/>
       return(
