@@ -127,7 +127,7 @@ export const HeaderButton = styled.a `
         
         ` 
         export const QuizDiv = styled.div `
-        height:140vh;
+        height:120vh;
         background-color: ${maroon};
         padding-left: ${({ iw }) => dynamicPadding(iw) + "px"};
         padding-right: ${({ iw }) => dynamicPadding(iw) + "px"};
