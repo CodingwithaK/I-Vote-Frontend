@@ -20,7 +20,7 @@ matches:null}
        .then ((matches)=> this.setState({matches: matches.candidate_users}))
        
 
-       },10000)
+       },5000)
    
        
     
@@ -31,7 +31,7 @@ matches:null}
        
         return(
         <div>
-        {this.state.matches?console.log("no candidates") : console.log(this.state.matches)}
+        
         {this.state.matches? <CandidateContainer matches={this.state.matches} candidates={this.state.candidates}/> : <LoadingDiv><h1>Loading</h1> <Spinner/></LoadingDiv>}
         </div> )
 }

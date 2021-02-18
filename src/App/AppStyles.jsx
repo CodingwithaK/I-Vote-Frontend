@@ -191,6 +191,9 @@ export const HeaderButton = styled.a `
             }
         }
         `
-        export const FormDiv = styled.div`
+        export const FormDiv = styled.div `
 
+        `
+        export const CardDiv = styled.div `
+        
         `
